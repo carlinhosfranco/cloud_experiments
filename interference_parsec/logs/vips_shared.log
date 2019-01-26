@@ -1,0 +1,172 @@
+--------- vips ---------
+	 2019-01-26_14:20:33
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'native'.
+orion_18000x18000.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark orion_18000x18000.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+
+real	1m0.376s
+user	3m34.456s
+sys	0m5.964s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC]
+[PARSEC] BIBLIOGRAPHY
+[PARSEC]
+[PARSEC] [1] Bienia. Benchmarking Modern Multiprocessors. Ph.D. Thesis, 2011.
+[PARSEC]
+[PARSEC] Done.
+2019-01-26_14:20:33
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:22:46
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'simlarge'.
+bigben_2662x5500.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark bigben_2662x5500.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+
+real	0m1.058s
+user	0m7.284s
+sys	0m0.212s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC]
+[PARSEC] BIBLIOGRAPHY
+[PARSEC]
+[PARSEC] [1] Bienia. Benchmarking Modern Multiprocessors. Ph.D. Thesis, 2011.
+[PARSEC]
+[PARSEC] Done.
+2019-01-26_14:22:46
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:24:14
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'simlarge'.
+bigben_2662x5500.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark bigben_2662x5500.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+
+real	0m0.704s
+user	0m5.240s
+sys	0m0.092s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC]
+[PARSEC] BIBLIOGRAPHY
+[PARSEC]
+[PARSEC] [1] Bienia. Benchmarking Modern Multiprocessors. Ph.D. Thesis, 2011.
+[PARSEC]
+[PARSEC] Done.
+2019-01-26_14:24:14
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:24:26
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'native'.
+orion_18000x18000.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark orion_18000x18000.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+
+real	0m45.693s
+user	2m36.704s
+sys	0m3.064s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC]
+[PARSEC] BIBLIOGRAPHY
+[PARSEC]
+[PARSEC] [1] Bienia. Benchmarking Modern Multiprocessors. Ph.D. Thesis, 2011.
+[PARSEC]
+[PARSEC] Done.
+2019-01-26_14:24:26
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:28:18
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'native'.
+orion_18000x18000.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark orion_18000x18000.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+--------- vips ---------
+	 2019-01-26_14:30:16
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'native'.
+orion_18000x18000.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark orion_18000x18000.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+
+real	0m58.679s
+user	3m19.652s
+sys	0m4.784s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC]
+[PARSEC] BIBLIOGRAPHY
+[PARSEC]
+[PARSEC] [1] Bienia. Benchmarking Modern Multiprocessors. Ph.D. Thesis, 2011.
+[PARSEC]
+[PARSEC] Done.
+2019-01-26_14:30:16
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:32:20
+	 shared Apps: vips ferret
+[PARSEC] Benchmarks to run:  parsec.vips
+
+[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
+[PARSEC] Deleting old run directory.
+[PARSEC] Setting up run directory.
+[PARSEC] Unpacking benchmark input 'simlarge'.
+bigben_2662x5500.v
+[PARSEC] Running 'time /home/carlos/scrips_iscc_parsec/parsec-3.0/pkgs/apps/vips/inst/amd64-linux.gcc-pthreads/bin/vips im_benchmark bigben_2662x5500.v output.v':
+[PARSEC] [---------- Beginning of output ----------]
+
+real	0m0.709s
+user	0m5.208s
+sys	0m0.084s
+[PARSEC] [----------    End of output    ----------]
+[PARSEC]
+[PARSEC] BIBLIOGRAPHY
+[PARSEC]
+[PARSEC] [1] Bienia. Benchmarking Modern Multiprocessors. Ph.D. Thesis, 2011.
+[PARSEC]
+[PARSEC] Done.
+2019-01-26_14:32:20
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:34:41
+	 shared Apps: vips ferret
+2019-01-26_14:34:41
+--------- END ---------
+--------- vips ---------
+	 2019-01-26_14:39:33
+	 shared Apps: vips ferret
+2019-01-26_14:39:33
+--------- END ---------
