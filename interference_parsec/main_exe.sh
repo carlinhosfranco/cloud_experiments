@@ -25,12 +25,16 @@ DEDUP=
 FERRET=
 SWAPTIONS=
 
+DIR_COUNT="$(ls noise_check/ | wc -l)"
+
 ######## Configs ########
 MACHINE_HOME="$HOME/interference_parsec/"
-MACHINE_1="machine1"
+MACHINE_1="192.168.20.102"
 MACHINE_2="machine2"
 MACHINE_3="machine3"
-USER="carlos"
+USER="root"
+
+INPUT="native"
 
 LOGDATE="$(date +%F_%H:%M:%S)"
 
@@ -44,7 +48,7 @@ function dedicated {
     echo $LOGDATE >> $MAIN_LOG
 
     #echo "parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 > $MAIN_LOG"
-    parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 >> $MAIN_LOG
+    parsecmgmt -a run -p $APP -c gcc-pthreads -i $INPUT -n 8 >> $MAIN_LOG
     
     echo $LOGDATE >> $MAIN_LOG
     echo "--------- END ---------" >> $MAIN_LOG    
@@ -60,20 +64,28 @@ function shared {
 
     local MAIN_LOG=${DIR_LOG}/$APP"_"$SCENARIO.log
 
-    ssh -n $USER@$MACHINE_1 "./$HOME/interference_parsec/noise_exe.sh $APP_2&"&
+    #ssh -n $USER@$MACHINE_1 "$HOME/interference_parsec/noise_exe.sh $APP_2&"&
+    ssh -n $USER@$MACHINE_1 "bash $HOME/interference_parsec/noise_exe.sh $APP_2&"&
 
     echo "--------- $APP ---------" >> $MAIN_LOG
     echo -e "\t $LOGDATE" >> $MAIN_LOG
     echo -e "\t $SCENARIO Apps: $APP $APP_2" >> $MAIN_LOG
 
-    #parsecmgmt -a run -p $APP -c gcc-pthreads -i simlarge -n 8 >> $MAIN_LOG
-    echo "parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 > $MAIN_LOG"
+    parsecmgmt -a run -p $APP -c gcc-pthreads -i $INPUT -n 8 >> $MAIN_LOG
+    #echo "parsecmgmt -a run -p $APP -c gcc-pthreads -i $INPUT -n 8 >> $MAIN_LOG"
 
     echo $LOGDATE >> $MAIN_LOG
     echo "--------- END ---------" >> $MAIN_LOG 
 
     ssh $USER@$MACHINE_1 touch $HOME/interference_parsec/ok
+
+    while [ $DIR_COUNT -le 1 ]; do
+        sleep 1
+        DIR_COUNT="$(ls noise_check/ | wc -l)"
+    done
+    
     ssh $USER@$MACHINE_1 rm -r $HOME/interference_parsec/ok
+    rm -rf noise_check/*
 
     #echo $MAIN_LOG
 
@@ -92,24 +104,30 @@ function overcmt_15 {
     local MAIN_LOG=${DIR_LOG}/$APP"_"$SCENARIO.log
 
     #echo "parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 > $MAIN_LOG"
-    ssh -n $USER@$MACHINE_1 "./$HOME/interference_parsec/noise_exe.sh $APP_2&"&
-    ssh -n $USER@$MACHINE_2 "./$HOME/interference_parsec/noise_exe.sh $APP_3&"&
+    ssh -n $USER@$MACHINE_1 "$HOME/interference_parsec/noise_exe.sh $APP_2&"&
+    ssh -n $USER@$MACHINE_2 "$HOME/interference_parsec/noise_exe.sh $APP_3&"&
 
     echo "--------- $APP ---------" >> $MAIN_LOG
     echo -e "\t $LOGDATE" >> $MAIN_LOG
     echo -e "\t $SCENARIO Apps: $APP $APP_2 $APP_3 Mode: $MODE" >> $MAIN_LOG
 
-    parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 >> $MAIN_LOG
+    parsecmgmt -a run -p $APP -c gcc-pthreads -i $INPUT -n 8 >> $MAIN_LOG
     #echo "parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 > $MAIN_LOG"
 
     echo $LOGDATE >> $MAIN_LOG
     echo "--------- END ---------" >> $MAIN_LOG 
 
     ssh $USER@$MACHINE_1 touch $HOME/interference_parsec/ok
-    ssh $USER@$MACHINE_1 rm -r $HOME/interference_parsec/ok
-
     ssh $USER@$MACHINE_2 touch $HOME/interference_parsec/ok
+
+    while [ $DIR_COUNT -le 2 ]; do
+        sleep 4
+        DIR_COUNT="$(ls noise_check/ | wc -l)"
+    done
+    
+    ssh $USER@$MACHINE_1 rm -r $HOME/interference_parsec/ok
     ssh $USER@$MACHINE_2 rm -r $HOME/interference_parsec/ok
+    rm -rf noise_check/*
     
 }
 
@@ -135,20 +153,26 @@ function overcmt_20 {
     echo -e "\t $LOGDATE" >> $MAIN_LOG
     echo -e "\t $SCENARIO Apps: $APP $APP_2 $APP_3 $APP_4 Mode: $MODE" >> $MAIN_LOG
 
-    parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 >> $MAIN_LOG
+    parsecmgmt -a run -p $APP -c gcc-pthreads -i $INPUT -n 8 >> $MAIN_LOG
     #echo "parsecmgmt -a run -p $APP -c gcc-pthreads -i native -n 8 > $MAIN_LOG"
 
     echo $LOGDATE >> $MAIN_LOG
-    echo "--------- END ---------" >> $MAIN_LOG 
+    echo "--------- END ---------" >> $MAIN_LOG
 
     ssh $USER@$MACHINE_1 touch $HOME/interference_parsec/ok
-    ssh $USER@$MACHINE_1 rm -r $HOME/interference_parsec/ok
-
     ssh $USER@$MACHINE_2 touch $HOME/interference_parsec/ok
-    ssh $USER@$MACHINE_2 rm -r $HOME/interference_parsec/ok
-
     ssh $USER@$MACHINE_3 touch $HOME/interference_parsec/ok
+
+    while [ $DIR_COUNT -le 2 ]; do
+        sleep 4
+        DIR_COUNT="$(ls noise_check/ | wc -l)"
+    done
+    
+    ssh $USER@$MACHINE_1 rm -r $HOME/interference_parsec/ok    
+    ssh $USER@$MACHINE_2 rm -r $HOME/interference_parsec/ok    
     ssh $USER@$MACHINE_3 rm -r $HOME/interference_parsec/ok
+    
+    rm -rf noise_check/*
 
 }
 
