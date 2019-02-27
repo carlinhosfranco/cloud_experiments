@@ -60,7 +60,6 @@
 ./main_exe.sh streamcluster ferret ferret streamcluster same
 ./main_exe.sh dedup ferret ferret dedup same
 
-
 mv logs/*.log logs/x1/
 
 for(( i=1; i<11; i++ )) do
